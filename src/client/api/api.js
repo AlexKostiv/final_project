@@ -1,5 +1,5 @@
 const countryCodeEndpoint = '../../../static/country-code.json';
-const ipEndpoint = `http://ip-api.com/json/`;
+const ipEndpoint = `https://api.ipdata.co?api-key=df43ee6e0345397c85bbe4e26dc9b2629ecc4a5a2df1bcdc6e6e87f3`;
 
 
 export const fetchCountryCode = async () => {
@@ -24,7 +24,7 @@ export const fetchForecast = async (query, lat, lon) => {
 export const fetchCurrentLocationAndWeather = async () => {
   const requestLocation = await fetch(ipEndpoint);
   const location = await requestLocation.json();
-  const weather = await fetchForecast(undefined, location.lat, location.lon);
+  const weather = await fetchForecast(undefined, location.latitude, location.longitude);
 
   return weather;
 };
