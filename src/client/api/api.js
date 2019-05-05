@@ -3,7 +3,7 @@ const ipEndpointKey = `df43ee6e0345397c85bbe4e26dc9b2629ecc4a5a2df1bcdc6e6e87f3`
 const openWeatheMapKey = `7432e6c76236caab2c02e1851c2b6225`;
 const countryCodeEndpoint = '../../../static/country-code.json';
 const ipEndpoint = `https://api.ipdata.co?api-key=${ipEndpointKey}`;
-const openWeatheMapEndpoint = `http://api.openweathermap.org/data/2.5/forecast?`;
+const openWeatheMapEndpoint = `https://api.openweathermap.org/data/2.5/forecast?`;
 
 
 export const fetchCountryCode = async () => {
