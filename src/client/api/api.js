@@ -1,5 +1,9 @@
+
+const ipEndpointKey = `df43ee6e0345397c85bbe4e26dc9b2629ecc4a5a2df1bcdc6e6e87f3`;
+const openWeatheMapKey = `7432e6c76236caab2c02e1851c2b6225`;
 const countryCodeEndpoint = '../../../static/country-code.json';
-const ipEndpoint = `https://api.ipdata.co?api-key=df43ee6e0345397c85bbe4e26dc9b2629ecc4a5a2df1bcdc6e6e87f3`;
+const ipEndpoint = `https://api.ipdata.co?api-key=${ipEndpointKey}`;
+const openWeatheMapEndpoint = `http://api.openweathermap.org/data/2.5/forecast?`;
 
 
 export const fetchCountryCode = async () => {
@@ -13,7 +17,7 @@ export const fetchForecast = async (query, lat, lon) => {
   const searchQuery = query ? `q=${query}&` : '';
   const latitude = lat ? `lat=${lat}&` : '';
   const longitude = lon ? `lon=${lon}&` : '';
-  const url = `${'http://api.openweathermap.org/data/2.5/forecast?' + searchQuery + latitude + longitude}APPID=7432e6c76236caab2c02e1851c2b6225&units=metric`;
+  const url = `${openWeatheMapEndpoint + searchQuery + latitude + longitude}APPID=${openWeatheMapKey}&units=metric`;
   const forecastRequest = await fetch(url);
   const forecast = await forecastRequest.json();
 
