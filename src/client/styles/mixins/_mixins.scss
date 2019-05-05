@@ -1,0 +1,22 @@
+@mixin transition($prop: all, $speed: .3s, $func: ease) {
+  transition: $prop $speed $func;
+}
+
+@mixin animation($name, $duration, $timing: ease, $count: 1) {
+   animation: $name $duration $timing $count;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
