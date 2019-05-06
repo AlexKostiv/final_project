@@ -1,4 +1,4 @@
-import React/*, { useRef }*/ from 'react';
+import React, { useRef } from 'react';
 
 const Header = ({
   onChange,
@@ -7,6 +7,11 @@ const Header = ({
   onSearchWeather,
   isSearching
 }) => {
+  const header = useRef(null);
+  const onFocusChange = (e) => {
+    e.target.select();
+  };
+
   const toggleSearchBar = () => {
     header.current.classList.toggle('active');
   };
@@ -14,6 +19,7 @@ const Header = ({
   return (
       <div
           className="app-header"
+          ref={header}
       >
         <div className="header-wrapper">
           <div className="logo">
@@ -29,6 +35,7 @@ const Header = ({
                   className="form-control"
                   onChange={onChange}
                   onKeyDown={onKeyDown}
+                  onFocus={onFocusChange}
                   placeholder="Search for city, country"
                   readOnly={isSearching}
                   type="text"
